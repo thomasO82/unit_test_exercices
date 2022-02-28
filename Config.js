@@ -1,10 +1,17 @@
 class Config {
-   static bdTestName = "test_users"
-   static bdUserName = "thomas-o"
-   static bdPassword = "Templier82"
-   static bdClusterName = "cluster0"
-   static bdName = "userManager"
+   static bdTestName
+   static bdNightwatch
+   static bdUserName 
+   static bdPassword 
+   static bdClusterName 
+   static bdName 
+   static nightwatchBdd
    static port = 8080;
+
+}
+
+if ((process.env.NODE_ENV || '').trim() === "nightwatch") {
+   Config.bdName = Config.nightwatchBdd
 }
 
 module.exports = Config

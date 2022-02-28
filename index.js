@@ -4,9 +4,8 @@ const bodyParser = require('body-parser');
 const UserController = require('./UserController.js')
 const User = require('./models/User.js');
 const Config = require('./Config.js');
-
 const app = express();
-const db = `mongodb+srv://${Config.bdUserName}:${Config.bdPassword}@${Config.bdClusterName}.fbigf.mongodb.net/${Config.bdTestName}?retryWrites=true&w=majority`;
+const db = `mongodb+srv://${Config.bdUserName}:${Config.bdPassword}@${Config.bdClusterName}.fbigf.mongodb.net/${Config.bdName}?retryWrites=true&w=majority`;
 
 mongoose.connect(db, err =>{
     if(err){

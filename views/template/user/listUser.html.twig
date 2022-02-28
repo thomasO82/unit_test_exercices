@@ -4,14 +4,14 @@
 <div class="container mt-5">
 <div class="row">
 {% for user in users %}
-    <div class="col-md-3 card mx-auto">
+    <div class="col-md-3 card mx-auto GI-card-{{user.name}}">
         <div class="card-body">
             <h5 class="card-title text-center">{{user.name}} {{user.firstname}}</h5>
             <p class="card-text text-center">{{user.mail}}</p>
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="/updateUser/{{user.id}}" class="btn btn-primary GI-update-{{user.id}}">modifer</a>
-                    <a href="/deleteUser/{{user.id}}" class="btn btn-danger GI-delete-{{user.id}}">supprimer</a>
+                    <a href="/updateUser/{{user.id}}" class="btn btn-primary GI-update-{{user.name}}" name="GI-update-{{user.name}}">modifer</a>
+                    <a href="/deleteUser/{{user.id}}" class="btn btn-danger" name= "GI-delete-{{user.name}}">supprimer</a>
                 </div>
             </div>
         </div>

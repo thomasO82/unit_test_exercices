@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const UserController = require('../UserController.js')
-const User = require('../models/User.js');
-const Config = require('../Config.js');
+const UserController = require('../../UserController.js')
+const User = require('../../models/User.js');
+const Config = require('../../Config.js');
 const db = `mongodb+srv://${Config.bdUserName}:${Config.bdPassword}@${Config.bdClusterName}.fbigf.mongodb.net/${Config.bdName}?retryWrites=true&w=majority`;
-
 //la methode beforeAll() permet d'executer le code situé a l'interieur avant tout les tests
 beforeAll(async () => {
     await mongoose.connect(db)
