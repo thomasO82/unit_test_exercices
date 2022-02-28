@@ -7,7 +7,6 @@ class Config {
    static bdName 
    static nightwatchBdd
    static port = 8080;
-
 }
 
 if ((process.env.NODE_ENV || '').trim() === "nightwatch") {
