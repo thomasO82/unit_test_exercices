@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UserController = require('../../UserController.js')
 const User = require('../../models/User.js');
-const Config = require('../../Config.js');
-const db = `mongodb+srv://${Config.bdUserName}:${Config.bdPassword}@${Config.bdClusterName}.fbigf.mongodb.net/${Config.bdName}?retryWrites=true&w=majority`;
+require('dotenv').config()
+const db = process.env.BDD_UNIT_URL;
 //la methode beforeAll() permet d'executer le code situé a l'interieur avant tout les tests
 beforeAll(async () => {
-    await mongoose.connect(db)
+     mongoose.connect(db)
     await User.deleteMany()
 })
 
@@ -21,7 +21,7 @@ afterAll(async () => {
 describe('recuperer tous les utilisateurs', () => {
 
     it('devrait recupérer tout les utilisateurs', async () => {
-        let user = await new User({
+        let user = new User({
             'name': 'user 1',
             'firstname': 'name user 1',
             'mail': 'mail user 1',

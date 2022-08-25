@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="e2e"
+    errors="1" failures="1" hostname="" id="" package="e2e" skipped="0"
+    tests="1" time="15.98" timestamp="">
+  
+    <testcase name="add user" classname="e2e" time="15.98" assertions="2">
+
+      <failure message="Testing if the page title contains &#39;Gestion utilisateurs&#39; in 5000ms - expected &#34;contains &#39;Gestion utilisateurs&#39;&#34; but got: &#34;&#34; (10992ms)">    at DescribeInstance.&lt;anonymous&gt; (C:\Users\olive\Documents\unit_test_exercices\test\nightwatch\e2e.js:9:17)</failure>
+
+    
+    <error message="chrome not reachable
+  (Session info: chrome=104.0.5112.102)" type="error"><![CDATA[
+    WebDriverError: chrome not reachable
+  (Session info: chrome=104.0.5112.102)
+    at Object.throwDecodedError (C:\Users\olive\Documents\unit_test_exercices\node_modules\selenium-webdriver\lib\error.js:522:15)
+    at parseHttpResponse (C:\Users\olive\Documents\unit_test_exercices\node_modules\selenium-webdriver\lib\http.js:589:13)
+    at Executor.execute (C:\Users\olive\Documents\unit_test_exercices\node_modules\selenium-webdriver\lib\http.js:514:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Driver.execute (C:\Users\olive\Documents\unit_test_exercices\node_modules\selenium-webdriver\lib\webdriver.js:740:17)
+    at async MethodMappings.getPageTitle (C:\Users\olive\Documents\unit_test_exercices\node_modules\nightwatch\lib\transport\selenium-webdriver\method-mappings.js:215:25)
+    at async C:\Users\olive\Documents\unit_test_exercices\node_modules\nightwatch\lib\transport\selenium-webdriver\actions.js:67:18
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       → WebDriverError
+
+    chrome not reachable
+  (Session info: chrome=104.0.5112.102)
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

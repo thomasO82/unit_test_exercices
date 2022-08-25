@@ -3,11 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UserController = require('./UserController.js')
 const User = require('./models/User.js');
-const Config = require('./Config.js');
 const app = express();
-const db = `mongodb+srv://${Config.bdUserName}:${Config.bdPassword}@${Config.bdClusterName}.fbigf.mongodb.net/${Config.bdName}?retryWrites=true&w=majority`;
+require('dotenv').config()
 
-mongoose.connect(db, err =>{
+mongoose.connect(process.env.BDD_URL, err =>{
     if(err){
         console.error('error' + err);
     }else{
@@ -17,7 +16,7 @@ mongoose.connect(db, err =>{
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('./assets'));
-app.listen(Config.port, () => {
+app.listen(parseInt(process.env.PORT), () => {
     console.log("le serveur marche !");
 });
 

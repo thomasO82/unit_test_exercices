@@ -4,7 +4,7 @@ describe('try to add,update,delete user', function() {
     test('add user', function(browser) {
       const mockObjectId = new mongoose.Types.ObjectId();
       browser
-        .url('http://localhost:8080/')
+        .url('http://localhost:3000/')
         .waitForElementVisible('body')
         .assert.titleContains('Gestion utilisateurs')
         .click('.GI-header-link-addUser')
